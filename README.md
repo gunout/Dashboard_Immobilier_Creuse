@@ -1,5 +1,6 @@
 # Dashboard_Immobilier_Creuse - METHODE ( LOCAL ) ( Données 2024 ) 
-🏘️ Dashboard Immobilier Creuse  ℹ️ Données réelles DVF 2024 pour la commune de Fresselines (INSEE 23018), provenant du fichier local dvf_2024.csv
+🏘️ Dashboard Immobilier Creuse
+ℹ️ Données réelles DVF 2024 pour la commune de Ahun (INSEE 23001), provenant du fichier local dvf_2024.csv
 
 <img width="660" height="460" alt="Screenshot_2025-10-16_23-10-16" src="https://github.com/user-attachments/assets/5b571d83-8d9c-4239-b759-5e30d04f3a29" />
 
