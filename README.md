@@ -1,4 +1,4 @@
-# Dashboard_Immobilier_Creuse - METHODE ( LOCAL ) ( Données 2024 ) 
+# Dashboard_Immobilier_Creuse - 2 METHODES ( HTTP ou LOCAL ) ( Données 2024 ) 
 🏘️ Dashboard Immobilier Creuse
 ℹ️ Données réelles DVF 2024 pour la commune de Ahun (INSEE 23001), provenant du fichier local dvf_2024.csv
 
@@ -7,6 +7,15 @@
 # EXAMPLE
 <img width="1280" height="1024" alt="Screenshot_2025-10-16_23-11-46" src="https://github.com/user-attachments/assets/51b310dd-3d7a-40c7-8fb8-381b8d705a56" />
 <img width="1280" height="1024" alt="Screenshot_2025-10-16_23-11-53" src="https://github.com/user-attachments/assets/c56c5722-18af-4621-9e53-68e9dd185b51" />
+
+# INSTALL DEPENDENCIES 
+
+    pip install beautifulsoup4 streamlit pandas requests plotly
+
+# RUN PROGRAM ( METHODE HTTP ) 
+
+    streamlit run Dashboard.py
+
 
 # METHODE LOCAL ( FICHIER LOCAL )
 # TÉLÉCHARGEMENT " dvf_2024.csv " avec CURL
