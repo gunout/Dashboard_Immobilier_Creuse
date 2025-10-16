@@ -1,6 +1,8 @@
 # Dashboard_Immobilier_Creuse - METHODE ( LOCAL ) ( Données 2024 ) 
 🏘️ Dashboard Immobilier Creuse  ℹ️ Données réelles DVF 2024 pour la commune de Fresselines (INSEE 23018), provenant du fichier local dvf_2024.csv
 
+<img width="660" height="460" alt="Screenshot_2025-10-16_23-10-16" src="https://github.com/user-attachments/assets/5b571d83-8d9c-4239-b759-5e30d04f3a29" />
+
 # EXAMPLE
 <img width="1280" height="1024" alt="Screenshot_2025-10-16_23-11-46" src="https://github.com/user-attachments/assets/51b310dd-3d7a-40c7-8fb8-381b8d705a56" />
 <img width="1280" height="1024" alt="Screenshot_2025-10-16_23-11-53" src="https://github.com/user-attachments/assets/c56c5722-18af-4621-9e53-68e9dd185b51" />
