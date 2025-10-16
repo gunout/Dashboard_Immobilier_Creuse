@@ -212,10 +212,15 @@ else:
     st.info(f"ℹ️ Données réelles DVF 2024 pour la commune de **{selected_commune_name}** (INSEE {selected_insee_code}), provenant de data.gouv.fr")
 
 # --- Chargement et Traitement des Données ---
+# --- DÉBUT DE LA CORRECTION ---
 if show_all_communes:
     df = load_all_creuse_data()
 else:
     df = load_commune_data(selected_insee_code)
+    # CORRECTION : Ajouter la colonne 'commune' même si on ne charge qu'une seule commune
+    if not df.empty:
+        df['commune'] = selected_commune_name
+# --- FIN DE LA CORRECTION ---
 
 if df.empty:
     if show_all_communes:
@@ -230,6 +235,7 @@ if show_all_communes:
     communes_disponibles = sorted(df['commune'].unique())
     commune_selectionnee = st.sidebar.multiselect("Commune", communes_disponibles, default=communes_disponibles)
 else:
+    # Si on n'affiche qu'une commune, on la pré-sélectionne pour le filtre
     commune_selectionnee = [selected_commune_name]
 
 codes_postaux_disponibles = sorted(df['code_postal'].astype(str).unique())
@@ -295,7 +301,7 @@ if 'latitude' in df_filtre.columns and 'longitude' in df_filtre.columns:
     if show_all_communes:
         fig = px.scatter_mapbox(df_carte, lat="latitude", lon="longitude", color="prix_m2", size="surface_reelle_bati", hover_data=["valeur_fonciere", "type_local", "date_mutation", "commune"], color_continuous_scale=px.colors.sequential.Viridis, size_max=15, zoom=8, mapbox_style="open-street-map", title=f"Carte de {len(df_carte)} transactions (échantillon)")
     else:
-        fig = px.scatter_mapbox(df_carte, lat="latitude", lon="longitude", color="prix_m2", size="surface_reelle_bati", hover_data=["valeur_fonciere", "type_local", "date_mutation"], color_continuous_scale=px.colors.sequential.Viridis, size_max=15, zoom=11, mapbox_style="open-street-map", title=f"Carte de {len(df_carte)} transactions (échantillon)")
+        fig = px.scatter_mapbox(df_carte, lat="latitude", lon="longitude", color="prix_m2", size="surface_reelle_bati", hover_data=["valeur_fonciere", "type_local", "date_mutation", "commune"], color_continuous_scale=px.colors.sequential.Viridis, size_max=15, zoom=11, mapbox_style="open-street-map", title=f"Carte de {len(df_carte)} transactions (échantillon)")
     st.plotly_chart(fig, use_container_width=True)
 else:
     st.warning("Les données de localisation (latitude/longitude) ne sont pas disponibles pour afficher la carte.")
